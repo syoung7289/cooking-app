@@ -12,4 +12,8 @@ export class ShoppingListComponent {
     new Ingredient('Pie Crust', 1),
     new Ingredient('Tomato Paste', 1)
   ];
+
+  onIngredientAdded(ingredient) {
+    this.ingredients.push(ingredient);
+  }
 }
