@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Recipe }  from '../recipe.model';
 
 @Component({
@@ -7,6 +7,8 @@ import { Recipe }  from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent {
+  @Output() selectedRecipe = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
     new Recipe(
       "Pioneer Woman Pie",
@@ -19,4 +21,9 @@ export class RecipeListComponent {
       "https://assets.bonappetit.com/photos/57adf3c353e63daf11a4dfa2/16:9/w_1280,c_limit/lasagna-bolognese.jpg"
     )
   ];
+
+  pushDetailsForIndex(recipe: Recipe) {
+    console.log("list: " + recipe);
+    this.selectedRecipe.emit(recipe);
+  }
 }

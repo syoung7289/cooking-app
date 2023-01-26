@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { Tab } from '../shared/tab';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
+  tabs = Tab;
+  @Output() currentTab = new EventEmitter<Tab>();
+
+  tabClicked(event) {
+    if (Tab.RECIPE === event.target.innerHTML) {
+      this.currentTab.emit(Tab.RECIPE);
+    } else {
+      this.currentTab.emit(Tab.SHOPPING);
+    }
+  }
 }

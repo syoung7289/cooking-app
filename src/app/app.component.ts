@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tab } from './shared/tab';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cooking-app';
+  currentTab: Tab = Tab.RECIPE;
+
+  onTabClicked(event) {
+     this.currentTab = event;
+  }
+
+  showRecipe() {
+    return this.currentTab === Tab.RECIPE;
+  }
+
+  showShopping() {
+    return this.currentTab === Tab.SHOPPING;
+  }
 }
