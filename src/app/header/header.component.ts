@@ -8,14 +8,4 @@ import { Tab } from '../shared/tab';
 })
 export class HeaderComponent {
   collapsed = true;
-  tabs = Tab;
-  @Output() currentTab = new EventEmitter<Tab>();
-
-  tabClicked(event) {
-    if (Tab.RECIPE === event.target.innerHTML) {
-      this.currentTab.emit(Tab.RECIPE);
-    } else {
-      this.currentTab.emit(Tab.SHOPPING);
-    }
-  }
 }

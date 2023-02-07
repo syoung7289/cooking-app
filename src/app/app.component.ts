@@ -8,17 +8,4 @@ import { Tab } from './shared/tab';
 })
 export class AppComponent {
   title = 'cooking-app';
-  currentTab: Tab = Tab.RECIPE;
-
-  onTabClicked(event) {
-     this.currentTab = event;
-  }
-
-  showRecipe() {
-    return this.currentTab === Tab.RECIPE;
-  }
-
-  showShopping() {
-    return this.currentTab === Tab.SHOPPING;
-  }
 }
