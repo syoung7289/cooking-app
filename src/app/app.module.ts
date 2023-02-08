@@ -16,6 +16,7 @@ import { ShoppingListService } from './shopping/shopping-list/shopping-list.serv
 import { RecipeService } from './recipe/recipe.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeDetailMissingComponent } from './recipe/recipe-detail/recipe-detail-missing/recipe-detail-missing.component';
+import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RecipeDetailMissingComponent } from './recipe/recipe-detail/recipe-deta
     HeaderComponent,
     RecipeComponent,
     DropdownDirective,
-    RecipeDetailMissingComponent
+    RecipeDetailMissingComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
