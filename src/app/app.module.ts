@@ -7,10 +7,7 @@ import { CoreModule } from './core.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RecipeModule } from './recipe/recipe.module';
-import { ShoppingListModule } from './shopping/shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -19,13 +16,10 @@ import { AuthModule } from './auth/auth.module';
   ],
   imports: [
     CoreModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
-    RecipeModule,
-    ShoppingListModule,
-    SharedModule,
-    AuthModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
